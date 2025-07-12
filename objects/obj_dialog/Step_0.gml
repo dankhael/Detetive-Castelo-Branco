@@ -8,6 +8,7 @@ if mouse_check_button_pressed(mb_left) or keyboard_check_pressed(ord("E")) {
         pagina++;
     } else {
         global.dialogo = false;
+		global.block_menus = false;
         // Tell the player when this dialog ended
         with(obj_player) {
             dialog_end_frame = current_time;

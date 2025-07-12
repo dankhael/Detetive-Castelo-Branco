@@ -9,6 +9,7 @@ if (distance_to_object(obj_player) <= interaction_distance) {
 	    game.hidden_game_id = "table_game";
 	    game.initialize_game(); // Call initialization after setting the ID
 	    global.in_hidden_object_game = true;
+		global.block_menus = true;
 	}
 } else {
     can_interact = false;

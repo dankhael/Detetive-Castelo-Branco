@@ -23,6 +23,11 @@ if (mouse_check_button_pressed(mb_left)) {
                 
                 // Object found!
                 obj.found = true;
+				if (obj.is_item and !inventory_has_item(obj.id)) {
+					show_debug_message("Adding Item");
+					show_debug_message("Tentando adicionar item com a chave: " + string(obj.id));
+					add_item(obj.id);
+				}
                 hidden_objects[i] = obj;
 				audio_play_sound(snd_item_found, 1, false);
                 

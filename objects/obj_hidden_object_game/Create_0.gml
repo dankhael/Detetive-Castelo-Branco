@@ -28,6 +28,7 @@ mouse_clicked = false;
 // Function: close_game
 function close_game() {
     global.in_hidden_object_game = false;
+	global.block_menus = false;
     instance_destroy();
 }
 
@@ -93,7 +94,8 @@ function initialize_game() {
                 width: sprite_get_width(spr_badge),
                 height: sprite_get_height(spr_badge),
                 found: false,
-                id: "badge"
+                id: "badge",
+				is_item: true
             });
             
             array_push(hidden_objects, {
@@ -103,7 +105,8 @@ function initialize_game() {
                 width: sprite_get_width(spr_notepad),
                 height: sprite_get_height(spr_notepad),
                 found: false,
-                id: "notepad"
+                id: "notepad",
+				is_item: true
             });
             break;
     }

@@ -1,0 +1,1 @@
+scr_go_to_map_menu();

@@ -2,7 +2,7 @@
 hsp = 0;
 vsp = 0;
 
-if (global.dialogo == false) {
+if (global.dialogo == false and obj_item_manager.visible_inventory == false) {
 	if (keyboard_check(vk_right)) {
 	    hsp = move_speed;
 	    direction_facing = "right";
