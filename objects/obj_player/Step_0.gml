@@ -59,11 +59,11 @@ switch (direction_facing) {
         break;
 }
 
-if (distance_to_object(obj_par_npcs) <= 10) {
-    if keyboard_check_pressed(ord("E")) and global.dialogo == false and dialog_end_frame != current_time {
-        var npc = instance_nearest(x, y, obj_par_npcs);
-        var dialogo = instance_create_layer(x, y, "Dialogo", obj_dialog);
-        dialogo.npc_nome = npc.nome;
-        global.dialogo = true;
-    }
-}
+//if (distance_to_object(obj_par_npcs) <= 10) {
+//    if keyboard_check_pressed(ord("E")) and global.dialogo == false and dialog_end_frame != current_time {
+//        var npc = instance_nearest(x, y, obj_par_npcs);
+//        var dialogo = instance_create_layer(x, y, "Dialogo", obj_dialog);
+//        dialogo.npc_nome = npc.nome;
+//        global.dialogo = true;
+//    }
+//}

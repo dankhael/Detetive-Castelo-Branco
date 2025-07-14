@@ -32,7 +32,7 @@ if (mouse_check_button_pressed(mb_left)) {
 				audio_play_sound(snd_item_found, 1, false);
                 
                 // Save state
-                save_game_state();
+                //save_game_state();
 				
 				check_completion();
                 
@@ -64,15 +64,13 @@ function check_completion() {
     
     if (all_found and hidden_game_id == "table_game") {
 		close_game();
+		global.completed_table_game = true;
 		// Start initial dialog
-		var npc = instance_create_layer(x, y, "Instances_1", obj_found_event);
-		var dialogo = instance_create_layer(x, y, "Dialogo", obj_dialog);
-		dialogo.npc_nome = npc.nome;
-		global.dialogo = true;
+		create_textbox("event 2");
     }
 }
 
-// In obj_hidden_object_game Step Event, add this:
-if (keyboard_check_pressed(ord("R"))) {
-    reset_game_state();
-}
+//// In obj_hidden_object_game Step Event, add this:
+//if (keyboard_check_pressed(ord("R"))) {
+//    reset_game_state();
+//}

@@ -32,25 +32,25 @@ function close_game() {
     instance_destroy();
 }
 
-// Function: save_game_state
-function save_game_state() {
-    var save_data = {};
-    save_data.objects = [];
+//// Function: save_game_state
+//function save_game_state() {
+//    var save_data = {};
+//    save_data.objects = [];
     
-    for (var i = 0; i < array_length(hidden_objects); i++) {
-        var obj_data = {
-            id: hidden_objects[i].id,
-            found: hidden_objects[i].found
-        };
-        array_push(save_data.objects, obj_data);
-    }
+//    for (var i = 0; i < array_length(hidden_objects); i++) {
+//        var obj_data = {
+//            id: hidden_objects[i].id,
+//            found: hidden_objects[i].found
+//        };
+//        array_push(save_data.objects, obj_data);
+//    }
     
-    // Save to file or global variable
-    var json_string = json_stringify(save_data);
-    var file = file_text_open_write("hidden_game_" + hidden_game_id + ".json");
-    file_text_write_string(file, json_string);
-    file_text_close(file);
-}
+//    // Save to file or global variable
+//    var json_string = json_stringify(save_data);
+//    var file = file_text_open_write("hidden_game_" + hidden_game_id + ".json");
+//    file_text_write_string(file, json_string);
+//    file_text_close(file);
+//}
 
 // Function: load_game_state
 function load_game_state() {
@@ -87,6 +87,10 @@ function initialize_game() {
         case "table_game":
             // Add hidden objects with their positions and states
             show_debug_message("Table Game ID: Pushing objects");
+			if (global.completed_table_game) {
+				// Don't add objects if game already completed
+				break;
+			}
             array_push(hidden_objects, {
                 sprite: spr_badge,
                 x: background_x + 100,
@@ -112,7 +116,7 @@ function initialize_game() {
     }
     
     // Load saved states after objects are created
-    load_game_state();
+    //load_game_state();
 }
 
 // Add this function in your obj_hidden_object_game

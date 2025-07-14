@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_goof",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":102.30712,
+  "name":"snd_goof",
+  "parent":{
+    "name":"Sons",
+    "path":"folders/Sons.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_goof.mp3",
+  "type":0,
+  "volume":0.1,
+}

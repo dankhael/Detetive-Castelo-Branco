@@ -18,6 +18,11 @@ global.item_list = {
 		"Caderno",
 		"Esse bloco de notas já me ajudou muito, as pessoas subestimam o quão util é anotar seus pensamentos.",
 		spr_notepad
+	),
+	magazine : new create_item(
+		"Revista Choquetel",
+		"A Choquetel sempre faz as melhores revistas de quebra cabeça, fico horas jogando sudoku.",
+		spr_magazine
 	)
 }
 
