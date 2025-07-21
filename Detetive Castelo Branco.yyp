@@ -69,6 +69,7 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_rain","path":"objects/obj_rain/obj_rain.yy",},},
     {"id":{"name":"obj_speakblock","path":"objects/obj_speakblock/obj_speakblock.yy",},},
+    {"id":{"name":"obj_start_casa_vinicius","path":"objects/obj_start_casa_vinicius/obj_start_casa_vinicius.yy",},},
     {"id":{"name":"obj_start_delegacia","path":"objects/obj_start_delegacia/obj_start_delegacia.yy",},},
     {"id":{"name":"obj_start_event","path":"objects/obj_start_event/obj_start_event.yy",},},
     {"id":{"name":"obj_start_parque","path":"objects/obj_start_parque/obj_start_parque.yy",},},
