@@ -5,14 +5,14 @@ draw_set_alpha(1);
 
 // Draw main background image FIRST
 draw_sprite(background_sprite, 0, background_x, background_y);
-show_debug_message("Drawing main image");
+//show_debug_message("Drawing main image");
 
 // Draw hidden objects that haven't been found
 for (var i = 0; i < array_length(hidden_objects); i++) {
     var obj = hidden_objects[i];
     if (!obj.found) {
         // Debug: Show what we're trying to draw
-        show_debug_message("Drawing object " + obj.id + " at " + string(obj.x) + ", " + string(obj.y));
+        //show_debug_message("Drawing object " + obj.id + " at " + string(obj.x) + ", " + string(obj.y));
         
         // Draw the sprite
         draw_sprite(obj.sprite, 0, obj.x, obj.y);

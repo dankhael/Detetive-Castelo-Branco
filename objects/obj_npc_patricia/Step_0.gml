@@ -8,3 +8,7 @@ if (distance_to_object(obj_player) <= interaction_distance) {
 		global.patricia_event_1 = true;
 	}
 }
+
+if (global.patricia_event_1) {
+	scr_unlock_location(rm_parque_casa_fraca);
+}

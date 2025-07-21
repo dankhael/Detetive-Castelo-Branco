@@ -1,0 +1,1 @@
+global.block_menus = true;

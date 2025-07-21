@@ -2,7 +2,13 @@
 hsp = 0;
 vsp = 0;
 
-if (global.dialogo == false and obj_item_manager.visible_inventory == false) {
+if (keyboard_check(vk_shift)) {
+	move_speed = 6;
+} else {
+	move_speed = 2;
+}
+
+if (!global.dialogo and !obj_item_manager.visible_inventory and !global.on_cutscene and !global.in_hidden_object_game) {
 	if (keyboard_check(vk_right)) {
 	    hsp = move_speed;
 	    direction_facing = "right";
@@ -22,12 +28,12 @@ if (global.dialogo == false and obj_item_manager.visible_inventory == false) {
 
 // --- COLLISION CHECK ---
 // Horizontal collision
-if (place_meeting(x + hsp, y, obj_wall)) {
+if (place_meeting(x + hsp, y, obj_wall) or place_meeting(x + hsp, y, obj_npc_wall)) {
     hsp = 0;
 }
 
 // Vertical collision
-if (place_meeting(x, y + vsp, obj_wall)) {
+if (place_meeting(x, y + vsp, obj_wall) or place_meeting(x, y + vsp, obj_npc_wall)) {
     vsp = 0;
 }
 
@@ -58,12 +64,3 @@ switch (direction_facing) {
         sprite_index = spr_player_walk_right;
         break;
 }
-
-//if (distance_to_object(obj_par_npcs) <= 10) {
-//    if keyboard_check_pressed(ord("E")) and global.dialogo == false and dialog_end_frame != current_time {
-//        var npc = instance_nearest(x, y, obj_par_npcs);
-//        var dialogo = instance_create_layer(x, y, "Dialogo", obj_dialog);
-//        dialogo.npc_nome = npc.nome;
-//        global.dialogo = true;
-//    }
-//}

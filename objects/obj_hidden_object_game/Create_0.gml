@@ -85,6 +85,7 @@ function initialize_game() {
     
     switch(hidden_game_id) {
         case "table_game":
+			background_sprite = spr_table_base;
             // Add hidden objects with their positions and states
             show_debug_message("Table Game ID: Pushing objects");
 			if (global.completed_table_game) {
@@ -110,6 +111,64 @@ function initialize_game() {
                 height: sprite_get_height(spr_notepad),
                 found: false,
                 id: "notepad",
+				is_item: true
+            });
+            break;
+		case "crime_game":
+			background_sprite = spr_crime_base;
+            show_debug_message("Crime Game ID: Pushing objects");
+			if (global.completed_crime_game) {
+				// Don't add objects if game already completed
+				break;
+			}
+            array_push(hidden_objects, {
+                sprite: spr_magnet,
+                x: background_x + 100,
+                y: background_y + 440,
+                width: sprite_get_width(spr_magnet),
+                height: sprite_get_height(spr_magnet),
+                found: false,
+                id: "magnet",
+				is_item: true
+            });
+            
+            array_push(hidden_objects, {
+                sprite: spr_bets,
+                x: background_x + 350,
+                y: background_y + 325,
+                width: sprite_get_width(spr_bets),
+                height: sprite_get_height(spr_bets),
+                found: false,
+                id: "bets",
+				is_item: true
+            });
+            break;
+		case "vini_house_game":
+			background_sprite = spr_vini_table_base;
+            show_debug_message("Crime Game ID: Pushing objects");
+			if (global.completed_vini_house_game) {
+				// Don't add objects if game already completed
+				break;
+			}
+            array_push(hidden_objects, {
+                sprite: spr_chess_game,
+                x: background_x + 362,
+                y: background_y + 420,
+                width: sprite_get_width(spr_chess_game),
+                height: sprite_get_height(spr_chess_game),
+                found: false,
+                id: "chess",
+				is_item: false
+            });
+            
+            array_push(hidden_objects, {
+                sprite: spr_nota,
+                x: background_x + 280,
+                y: background_y + 180,
+                width: sprite_get_width(spr_nota),
+                height: sprite_get_height(spr_nota),
+                found: false,
+                id: "nota",
 				is_item: true
             });
             break;

@@ -68,6 +68,20 @@ function check_completion() {
 		// Start initial dialog
 		create_textbox("event 2");
     }
+	
+	if (all_found and hidden_game_id == "crime_game") {
+		close_game();
+		global.completed_crime_game = true;
+		// Start initial dialog
+		create_textbox("event 19");
+    }
+	
+	if (all_found and hidden_game_id == "vini_house_game") {
+		close_game();
+		global.completed_vini_house_game = true;
+		// Start initial dialog
+		create_textbox("event 23");
+    }
 }
 
 //// In obj_hidden_object_game Step Event, add this:

@@ -39,6 +39,43 @@ function scr_text(_text) {
 				speaker_sprite[page_number] = spr_patricia_sorriso_portrait;
 				speaker_side[page_number] = -1;
 				break;
+			case "agente fraga":
+				speaker_sprite[page_number] = spr_fraga_normal_portrait;
+				speaker_side[page_number] = -1;
+				break;
+			case "fraga rindo":
+				speaker_sprite[page_number] = spr_fraga_rindo_portrait;
+				speaker_side[page_number] = -1;
+				break;
+			case "pericia 1":
+				speaker_sprite[page_number] = spr_pericia_1_portrait;
+				speaker_side[page_number] = -1;
+				break;
+			case "pericia 2":
+				speaker_sprite[page_number] = spr_pericia_2_portrait;
+				speaker_side[page_number] = -1;
+				break;
+			case "palhaço":
+				speaker_sprite[page_number] = spr_clown_portrait;
+				speaker_side[page_number] = -1;
+				break;
+			case "nicole chorando":
+				speaker_sprite[page_number] = spr_nicole_chorando_portrait;
+				speaker_side[page_number] = -1;
+				break;
+			case "nicole triste":
+				speaker_sprite[page_number] = spr_nicole_triste_portrait;
+				speaker_side[page_number] = -1;
+				break;
+			case "nicole carvalho":
+				speaker_sprite[page_number] = spr_nicole_carvalho_portrait;
+				speaker_side[page_number] = -1;
+				break;
+			case "lucas carvalho":
+				speaker_sprite[page_number] = spr_lucas_carvalho_portrait;
+				speaker_side[page_number] = -1;
+				break;
+
 		} 
 	} else {
 		speaker_sprite[page_number] = noone;

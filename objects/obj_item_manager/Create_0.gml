@@ -23,7 +23,22 @@ global.item_list = {
 		"Revista Choquetel",
 		"A Choquetel sempre faz as melhores revistas de quebra cabeça, fico horas jogando sudoku.",
 		spr_magazine
-	)
+	),
+	magnet : new create_item(
+		"Imã de Neodimio",
+		"Um imã de neodimio que eu encontrei na cena do crime, muito util em certas situações...",
+		spr_magnet
+	),
+	bets : new create_item(
+		"Apostas Esportivas",
+		"Um papel com dicas de apostas esportivas, será que é uma sinal pra eu apostar?",
+		spr_bets
+	),
+	nota : new create_item(
+		"Nota fiscal",
+		"Nota fiscal de uma roupa de palhaço, bem esquisito...",
+		spr_nota
+	),
 }
 
 //create the inventory
