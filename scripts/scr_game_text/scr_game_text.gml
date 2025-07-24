@@ -214,6 +214,9 @@ function scr_game_text(_text_id){
 		case "event 26":
 			scr_text("Bom dia senhor, já viu as novas edições da revista choquetel? são as minhas favoritas, e estão em promoção", "julia alves");
 			break;
+		case "event 73":
+			scr_text("Além disso, não tenho muito para ajudar, você realmente deveria tentar falar com esses apostadores", "tomás xavier");
+			break;
 		case "event 27":
 			scr_text("Tá olhando oquê?", "pedro melo");
 			scr_text("Por acaso você conhecia algúem chamado Vinicius?", "castelo branco");

@@ -1,0 +1,1 @@
+npc_obj = obj_npc_tomas_1;

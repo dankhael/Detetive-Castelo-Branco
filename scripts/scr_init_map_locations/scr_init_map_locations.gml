@@ -41,7 +41,23 @@ function scr_init_map_locations() {
     ds_map_add(orfeu, "room", rm_casa_de_orfeu);
     ds_map_add(orfeu, "name", "Casa de Orfeu");
     ds_map_add(orfeu, "spawn_x", 400);
-    ds_map_add(orfeu, "spawn_y", 482);
+    ds_map_add(orfeu, "spawn_y", 930);
     ds_map_add(orfeu, "unlocked", false); // Locked initially
     ds_list_add(global.map_locations, orfeu);
+	
+	var cafeteria = ds_map_create();
+    ds_map_add(cafeteria, "room", rm_cafeteria);
+    ds_map_add(cafeteria, "name", "Cafeteria Noite Azul");
+    ds_map_add(cafeteria, "spawn_x", 400);
+    ds_map_add(cafeteria, "spawn_y", 482);
+    ds_map_add(cafeteria, "unlocked", false); // Locked initially
+    ds_list_add(global.map_locations, cafeteria);
+	
+	var metro = ds_map_create();
+    ds_map_add(metro, "room", rm_metro);
+    ds_map_add(metro, "name", "Metrô");
+    ds_map_add(metro, "spawn_x", 400);
+    ds_map_add(metro, "spawn_y", 482);
+    ds_map_add(metro, "unlocked", false); // Locked initially
+    ds_list_add(global.map_locations, metro);
 }

@@ -75,7 +75,34 @@ function scr_text(_text) {
 				speaker_sprite[page_number] = spr_lucas_carvalho_portrait;
 				speaker_side[page_number] = -1;
 				break;
-
+			case "tomás xavier":
+				speaker_sprite[page_number] = spr_tomas_portrait;
+				speaker_side[page_number] = -1;
+				break;
+			case "pedro melo":
+				speaker_sprite[page_number] = spr_pedro_portrait;
+				speaker_side[page_number] = -1;
+				break;
+			case "gabriel borges":
+				speaker_sprite[page_number] = spr_tomas_portrait;
+				speaker_side[page_number] = -1;
+				break;
+			case "misterioso":
+				speaker_sprite[page_number] = spr_misterioso_portrait;
+				break;
+			case "julia alves":
+				speaker_sprite[page_number] = spr_julia_portrait;
+				speaker_side[page_number] = -1;
+				break;
+			case "julia animada":
+				speaker_sprite[page_number] = spr_julia_animada_portrait;
+				speaker_side[page_number] = -1;
+				break;
+			case "garconete":
+				speaker_sprite[page_number] = spr_garconete_portrait;
+				speaker_side[page_number] = -1;
+				break;
+			
 		} 
 	} else {
 		speaker_sprite[page_number] = noone;

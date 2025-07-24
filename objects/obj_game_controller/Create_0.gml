@@ -15,5 +15,6 @@ global.nicole_event_1 = false;
 global.nicole_block = true;
 global.orpheus_house_unlocked = false;
 global.completed_vini_house_game = false;
+global.cafeteria_unlocked = false;
 
 scr_init_map_locations();
