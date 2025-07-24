@@ -102,6 +102,10 @@ function scr_text(_text) {
 				speaker_sprite[page_number] = spr_garconete_portrait;
 				speaker_side[page_number] = -1;
 				break;
+			case "vinicius carvalho":
+				speaker_sprite[page_number] = spr_vinicius_portrait;
+				speaker_side[page_number] = -1;
+				break;				
 			
 		} 
 	} else {

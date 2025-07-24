@@ -223,7 +223,7 @@ function scr_game_text(_text_id){
 			scr_text("O cara que morreu? Não sei...", "pedro melo");
 			scr_text("Talvez sim, talvez não...", "pedro melo");
 			scr_text("Dependendo da situação talvez algo consiga refrescar minha memoria...", "pedro melo");
-			scr_text("Acho que ele tá me pedindo dinheiro...", "castelo entediado");
+			scr_text("Acho que ele tá me pedindo dinheiro...", "castelo tedio");
 			scr_text("Pena que não tenho nenhum! talvez eu tenha algum item que ele queira...", "castelo branco");
 			break;
 		case "event 29":
@@ -291,11 +291,11 @@ function scr_game_text(_text_id){
 			break;
 		case "event 37":
 			scr_text("Preparado?", "julia alves");
-			scr_text("Eu nasci preparado...", "castelo entediado");
+			scr_text("Eu nasci preparado...", "castelo tedio");
 			scr_text("Pera, isso é uma revista edição especial da choquetel?!!", "julia alves");
-			scr_text("É sim, eu ganhei de natal da delegada Patricia...", "castelo entediado");
+			scr_text("É sim, eu ganhei de natal da delegada Patricia...", "castelo tedio");
 			scr_text("Ela é muito rara! vamos trocar a minha ajuda por ela", "julia alves");
-			scr_text("Ok...", "castelo entediado");
+			scr_text("Ok...", "castelo tedio");
 			break;
 		case "event 38":
 			scr_text("Primeira pergunta!", "julia animada");
@@ -378,14 +378,16 @@ function scr_game_text(_text_id){
 			scr_text("Oque foi? não tenho mais nada pra ajudar, não me complica com o chefe!", "julia alves");
 			break;
 		case "event 47":
-			scr_text("Certo, parece que tem alguma alavanca dentro da caixa de metal, talvez eu consiga fazer algo para ativa-la", "castelo branco");
+			scr_text("Certo, parece que tem alguma alavanca dentro da caixa de metal, talvez eu consiga fazer algo para ativa-la usando algo que eu encontrei", "castelo branco");
 			break;
 		case "event 48":
 			scr_text("Consegui! agora é só abrir...", "castelo branco");
-			scr_text("Tem outro quebra cabeça? Esse cara era misterioso mesmo", "castelo entediado");
+			scr_text("Tem outro quebra cabeça? Esse cara era misterioso mesmo", "castelo tedio");
 			break;
 		case "event 49":
+			scr_text("Consegui! agora é só abrir...", "castelo branco");
 			scr_text("Uma chave de armário e um papel escrito 'Um rei sempre protege sua rainha', oque significa? ", "castelo branco");
+			scr_text("* Recebeu chave do armario e mensagem oculta")
 			scr_text("Não faço ideia, mas acho que alguém pode saber...", "tomás xavier");
 			scr_text("Vinicius não era o unico no projeto DecodeX, ele trabalhava junto com o Gabriel, eles se davam muito bem, e eu não conseguia entender metade das converas dos dois", "tomás xavier");
 			scr_text("Se tem alguém que pode entender essa mensagem é o Gabriel", "tomás xavier");
@@ -420,16 +422,16 @@ function scr_game_text(_text_id){
 		case "event 53":
 			scr_text("Droga! Não tinha nada no armário E1, alguém deve ter chegado antes de mim!", "gabriel borges");
 			scr_text("Eae Castelo, pegamos esse meliante arrombando um dos armários do metrô, vamos leva-lo na delegacia", "guarda belo");
-			scr_text("Ainda bem que você pegou ele, menos um problema pra mim", "castelo entediado");
+			scr_text("Ainda bem que você pegou ele, menos um problema pra mim", "castelo tedio");
 			scr_text("'Um rei sempre protege sua rainha', acho que esse enigma vai além do xadrez...", "castelo branco");
 			scr_text("Se considerarmos que ele é o rei, quem seria sua rainha? e oque isso significaria...", "castelo branco");
 			scr_text("Acho que tenho uma ideia...", "castelo branco");
 			break;
 		case "event 54":
-			scr_text("Boa tarde senhor, deseja alguma coisa", "garconete");
+			scr_text("Boa tarde senhor, deseja alguma coisa?", "garconete");
 			break;
 		case "event 55":
-			scr_text("Boa tarde senhor, deseja alguma coisa", "garconete");
+			scr_text("Boa tarde senhor, deseja alguma coisa?", "garconete");
 			scr_text("Poderia me dizer onde fica o armario do Vinicius Carvalho?", "castelo branco");
 			scr_text("É esse do lado do balcão", "garconete");
 			break;
@@ -438,6 +440,7 @@ function scr_game_text(_text_id){
 			scr_text("É muito perigoso levar isso pra delegacia, tenho que investigar esse notebook em casa!", "castelo branco");
 			break;
 		case "event 57":
+			scr_text("Esse notebook está criptografado, preciso de uma senha para desbloquear", "castelo branco");
 			scr_text("Ok, uma senha numerica de 4 digitos, será que ele deixou alguma pista de quais números", "castelo branco");
 			break;
 		case "event 58":
@@ -446,7 +449,7 @@ function scr_game_text(_text_id){
 			break;
 		case "event 59":
 			scr_text("Era aquele pendrive mesmo...", "castelo branco");
-			scr_text("Hã? Agora eu preciso ganhar um jogo?! se esse cara não fosse obcecado por enigmas talvez ainda estivesse vivo", "castelo entediado");
+			scr_text("Hã? Agora eu preciso ganhar um jogo?! se esse cara não fosse obcecado por enigmas talvez ainda estivesse vivo", "castelo tedio");
 			break;
 		case "event 60":
 			scr_text("Consegui desbloquear! Parece que só tem um arquivo de audio aqui, vamos ver o que é...", "castelo branco");
@@ -545,12 +548,32 @@ function scr_game_text(_text_id){
 			scr_text("Hã?", "tomás xavier");
 			scr_text("Eu quebrei, esse era o desejo do Vinicius antes de morrer e eu vou respeita-lo, além do mais, agora que o assassino confessou, não preciso mais dele pra provar nada", "castelo branco");
 			scr_text("Então você estava blefando pra conseguir a confissão, seu desgraçado!", "tomás xavier");
-			scr_text("Tudo termina bem quando acaba bem né?", "castelo entediado");
+			scr_text("Tudo termina bem quando acaba bem né?", "castelo tedio");
 			scr_text("Parabéns Castelo Branco, mais uma vez você mostrou porque é o detetive prodigio, estou orgulhosa de você!", "patricia sorriso");
 			global.case_finished = true;
 			break;
 		case "event 72":
 			scr_text("Tá fazendo oquê aí? meu marido morreu e você quer bisbilhotar meu quarto?!", "nicole chorando");
+			break;
+		case "event 74":
+			scr_text("por favor, ache quem fez isso com meu marido!", "nicole chorando");
+			break;
+		case "event 75":
+			scr_text("não acho que seja isso...", "castelo branco");
+			scr_text("tenho que usar algo que abra essa caixa de metal", "castelo branco");
+			break;
+		case "event 76":
+			scr_text("Um ótimo dia para estudar ao ar livre não é mesmo...", "gabriel borges");
+			break;
+		case "event 77":
+			scr_text("Eu não devia mexer nos armarios alheios", "castelo branco");
+			break;
+		case "event 78":
+			scr_text("Não é essa a senha...", "castelo branco");
+			break;
+		case "event 79":
+			scr_text("Não é essa a chave...", "castelo branco");
+			scr_text("Não dá pra colocar isso no computador...", "castelo branco");
 			break;
 	}
 }

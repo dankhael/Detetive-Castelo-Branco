@@ -145,7 +145,7 @@ function initialize_game() {
             break;
 		case "vini_house_game":
 			background_sprite = spr_vini_table_base;
-            show_debug_message("Crime Game ID: Pushing objects");
+            show_debug_message("Vini House Game ID: Pushing objects");
 			if (global.completed_vini_house_game) {
 				// Don't add objects if game already completed
 				break;
@@ -169,6 +169,35 @@ function initialize_game() {
                 height: sprite_get_height(spr_nota),
                 found: false,
                 id: "nota",
+				is_item: true
+            });
+            break;
+		case "safe_game":
+			background_sprite = spr_safe_base;
+            show_debug_message("Safe Game ID: Pushing objects");
+			if (global.completed_safe_game) {
+				// Don't add objects if game already completed
+				break;
+			}
+            array_push(hidden_objects, {
+                sprite: spr_clipe_shrink,
+                x: background_x + 180,
+                y: background_y + 560,
+                width: sprite_get_width(spr_clipe_shrink),
+                height: sprite_get_height(spr_clipe_shrink),
+                found: false,
+                id: "clipe",
+				is_item: true
+            });
+            
+            array_push(hidden_objects, {
+                sprite: spr_bilhete_shrink,
+                x: background_x + 240,
+                y: background_y + 570,
+                width: sprite_get_width(spr_bilhete_shrink),
+                height: sprite_get_height(spr_bilhete_shrink),
+                found: false,
+                id: "bilhete",
 				is_item: true
             });
             break;

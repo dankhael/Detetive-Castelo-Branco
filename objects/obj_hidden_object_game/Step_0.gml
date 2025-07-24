@@ -82,6 +82,13 @@ function check_completion() {
 		// Start initial dialog
 		create_textbox("event 23");
     }
+	
+	if (all_found and hidden_game_id == "safe_game") {
+		close_game();
+		global.completed_safe_game = true;
+		// Start initial dialog
+		create_textbox("event 34");
+    }
 }
 
 //// In obj_hidden_object_game Step Event, add this:

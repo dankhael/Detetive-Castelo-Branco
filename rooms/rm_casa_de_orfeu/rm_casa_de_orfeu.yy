@@ -154,6 +154,8 @@
     {"name":"inst_2122F619","path":"rooms/rm_casa_de_orfeu/rm_casa_de_orfeu.yy",},
     {"name":"inst_28526737","path":"rooms/rm_casa_de_orfeu/rm_casa_de_orfeu.yy",},
     {"name":"inst_5EC8C08A","path":"rooms/rm_casa_de_orfeu/rm_casa_de_orfeu.yy",},
+    {"name":"inst_2B3CA918","path":"rooms/rm_casa_de_orfeu/rm_casa_de_orfeu.yy",},
+    {"name":"inst_5074E97C","path":"rooms/rm_casa_de_orfeu/rm_casa_de_orfeu.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -163,6 +165,8 @@
     {"$GMRInstanceLayer":"","%Name":"Instances_1","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v2","%Name":"inst_23CC31D5_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_23CC31D5_1_1","objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":352.0,"y":896.0,},
         {"$GMRInstance":"v2","%Name":"inst_5219EAB4_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5219EAB4_1_1","objectId":{"name":"obj_map_trigger","path":"objects/obj_map_trigger/obj_map_trigger.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":352.0,"y":992.0,},
+        {"$GMRInstance":"v2","%Name":"inst_2B3CA918","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2B3CA918","objectId":{"name":"obj_start_orfeu","path":"objects/obj_start_orfeu/obj_start_orfeu.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":576.0,"y":288.0,},
+        {"$GMRInstance":"v2","%Name":"inst_5074E97C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5074E97C","objectId":{"name":"obj_metal_box","path":"objects/obj_metal_box/obj_metal_box.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":712.0,"y":179.0,},
       ],"layers":[],"name":"Instances_1","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Npc_Instance","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v2","%Name":"inst_512EF238","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_512EF238","objectId":{"name":"obj_npc_julia","path":"objects/obj_npc_julia/obj_npc_julia.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":256.0,"y":832.0,},
@@ -323,11 +327,11 @@
           -177,-2147483648,1,367,-15,-2147483648,2,7,8,-25,-2147483648,8,383,-2147483648,-2147483648,16,-2147483648,
           -2147483648,21,22,-8,-2147483648,2,23,24,-25,-2147483648,8,399,-2147483648,-2147483648,19,-2147483648,
           -2147483648,37,38,-4,-2147483648,-3,0,3,-2147483648,39,40,-25,-2147483648,4,415,-2147483648,-2147483648,
-          35,-8,-2147483648,-3,0,-31,-2147483648,3,58,59,60,-40,-2147483648,3,74,75,76,-172,-2147483648,2,61,62,
-          -5,-2147483648,2,116,117,-34,-2147483648,2,77,78,-5,-2147483648,2,132,133,-41,-2147483648,2,148,149,
-          -288,-2147483648,1,173,-6,-2147483648,4,174,175,171,268435630,-5,-2147483648,1,174,-24,-2147483648,3,
-          208,209,210,-6,220,4,190,191,187,268435646,-5,220,1,190,-24,-2147483648,3,224,225,226,-6,236,4,206,207,
-          203,268435662,-5,236,1,206,-24,-2147483648,3,240,241,242,-379,-2147483648,
+          35,-8,-2147483648,-3,0,-31,-2147483648,3,58,59,60,-40,-2147483648,3,74,75,76,-7,-2147483648,1,0,-164,
+          -2147483648,2,61,62,-5,-2147483648,2,116,117,-34,-2147483648,2,77,78,-5,-2147483648,2,132,133,-41,-2147483648,
+          2,148,149,-288,-2147483648,1,0,-6,-2147483648,4,174,175,171,268435630,-5,-2147483648,1,174,-24,-2147483648,
+          3,208,209,210,-6,220,4,190,191,187,268435646,-5,220,1,190,-24,-2147483648,3,224,225,226,-6,236,4,206,
+          207,203,268435662,-5,236,1,206,-24,-2147483648,3,240,241,242,-379,-2147483648,
         ],"TileDataFormat":1,},"tilesetId":{"name":"ts_classroom","path":"tilesets/ts_classroom/ts_classroom.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRTileLayer":"","%Name":"Tiles_Musem","depth":800,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_Musem","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":34,"SerialiseWidth":43,"TileCompressedData":[
           -405,-2147483648,3,986,987,988,-40,-2147483648,3,1002,1003,1004,-40,-2147483648,3,1018,1019,1020,-73,
