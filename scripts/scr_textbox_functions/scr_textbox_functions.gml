@@ -84,7 +84,7 @@ function scr_text(_text) {
 				speaker_side[page_number] = -1;
 				break;
 			case "gabriel borges":
-				speaker_sprite[page_number] = spr_tomas_portrait;
+				speaker_sprite[page_number] = spr_gabriel_portrait;
 				speaker_side[page_number] = -1;
 				break;
 			case "misterioso":

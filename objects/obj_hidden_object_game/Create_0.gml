@@ -122,22 +122,22 @@ function initialize_game() {
 				break;
 			}
             array_push(hidden_objects, {
-                sprite: spr_magnet,
-                x: background_x + 100,
-                y: background_y + 440,
-                width: sprite_get_width(spr_magnet),
-                height: sprite_get_height(spr_magnet),
+                sprite: spr_magnet_shrink,
+                x: background_x + 200,
+                y: background_y + 400,
+                width: sprite_get_width(spr_magnet_shrink),
+                height: sprite_get_height(spr_magnet_shrink),
                 found: false,
                 id: "magnet",
 				is_item: true
             });
             
             array_push(hidden_objects, {
-                sprite: spr_bets,
-                x: background_x + 350,
-                y: background_y + 325,
-                width: sprite_get_width(spr_bets),
-                height: sprite_get_height(spr_bets),
+                sprite: spr_bets_shrink,
+                x: background_x + 360,
+                y: background_y + 350,
+                width: sprite_get_width(spr_bets_shrink),
+                height: sprite_get_height(spr_bets_shrink),
                 found: false,
                 id: "bets",
 				is_item: true
@@ -152,8 +152,8 @@ function initialize_game() {
 			}
             array_push(hidden_objects, {
                 sprite: spr_chess_game,
-                x: background_x + 362,
-                y: background_y + 420,
+                x: background_x + 306,
+                y: background_y + 410,
                 width: sprite_get_width(spr_chess_game),
                 height: sprite_get_height(spr_chess_game),
                 found: false,

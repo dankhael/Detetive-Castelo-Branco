@@ -397,6 +397,7 @@
     {"name":"inst_E9FEC81","path":"rooms/rm_parque_casa_fraca/rm_parque_casa_fraca.yy",},
     {"name":"inst_D64528","path":"rooms/rm_parque_casa_fraca/rm_parque_casa_fraca.yy",},
     {"name":"inst_834D36D","path":"rooms/rm_parque_casa_fraca/rm_parque_casa_fraca.yy",},
+    {"name":"inst_45AAFAC7","path":"rooms/rm_parque_casa_fraca/rm_parque_casa_fraca.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -821,6 +822,7 @@
         {"$GMRInstance":"v2","%Name":"inst_12421F03","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_12421F03","objectId":{"name":"obj_clown","path":"objects/obj_clown/obj_clown.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":224.0,"y":320.0,},
         {"$GMRInstance":"v2","%Name":"inst_6D043440","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6D043440","objectId":{"name":"obj_clown","path":"objects/obj_clown/obj_clown.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":192.0,"y":256.0,},
         {"$GMRInstance":"v2","%Name":"inst_E9FEC81","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_E9FEC81","objectId":{"name":"obj_clown","path":"objects/obj_clown/obj_clown.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":288.0,"y":256.0,},
+        {"$GMRInstance":"v2","%Name":"inst_45AAFAC7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_45AAFAC7","objectId":{"name":"obj_npc_gabriel_1","path":"objects/obj_npc_gabriel_1/obj_npc_gabriel_1.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":896.0,"y":320.0,},
       ],"layers":[],"name":"Npc_Instance","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_Prop_City_1","depth":800,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_Prop_City_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":45,"SerialiseWidth":60,"TileCompressedData":[
           -157,-2147483648,7,6476,6477,6478,6479,0,6481,6482,-53,-2147483648,7,6508,6509,6510,6511,0,0,6514,-53,
