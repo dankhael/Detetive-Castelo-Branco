@@ -1,4 +1,4 @@
-show_debug_message("Creating Cutscene Object");
+event_inherited();
 cutscene = [
 	[cutscene_stop_sound, snd_investigation_2],
 	[cutscene_wait, 1],
@@ -9,9 +9,8 @@ cutscene = [
 	[cutscene_walk_right, 1, obj_player, 4],
 	[cutscene_walk_up, 1, obj_player, 9],
 	[cutscene_play_sound, snd_clown],
-	[cutscene_textbox, "event 12"]
+	[cutscene_textbox, "event 12"],
 ];
-
-action = 0;
-
-timer = 0;
+can_start = function() {
+	return global.cutscene_1_start;
+};

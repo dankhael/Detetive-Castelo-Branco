@@ -1,224 +1,73 @@
-// Game identification
-hidden_game_id = "";
+// Minigame de objetos escondidos. Criado por open_hidden_object_game(),
+// que chama initialize_game() com um id de global.hidden_object_games.
 
-// Display settings
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 
-// Background image
-background_sprite = spr_table_base;
 background_x = gui_width / 3;
 background_y = gui_height / 8;
 
-// Hidden objects array - Define all possible hidden objects
+hidden_game_id = "";
+definition = undefined;
+background_sprite = -1;
 hidden_objects = [];
 
-// Exit button
 exit_button = {
-    sprite: spr_exit_button,
-    x: gui_width - 60,
-    y: 40,
-    width: sprite_get_width(spr_exit_button),
-    height: sprite_get_height(spr_exit_button)
+	sprite: spr_exit_button,
+	x: gui_width - 60,
+	y: 40,
+	width: sprite_get_width(spr_exit_button),
+	height: sprite_get_height(spr_exit_button),
 };
 
-// Input handling
-mouse_clicked = false;
+function initialize_game(_game_id) {
+	hidden_game_id = _game_id;
+	definition = global.hidden_object_games[$ _game_id];
+	background_sprite = definition.background;
+	hidden_objects = [];
+	
+	// Jogo já completado: mostra só o fundo
+	if (variable_global_get(definition.completed_flag)) return;
+	
+	for (var i = 0; i < array_length(definition.objects); i++) {
+		var _def = definition.objects[i];
+		array_push(hidden_objects, {
+			key: _def.key,
+			sprite: _def.sprite,
+			x: background_x + _def.x,
+			y: background_y + _def.y,
+			width: sprite_get_width(_def.sprite),
+			height: sprite_get_height(_def.sprite),
+			found: false,
+			is_item: _def.is_item,
+		});
+	}
+}
 
-// Function: close_game
+/// Verdadeiro se o ponto (_x, _y) está dentro de _obj (sprites com origem no centro)
+function point_on(_obj, _x, _y) {
+	return point_in_rectangle(_x, _y,
+		_obj.x - _obj.width / 2, _obj.y - _obj.height / 2,
+		_obj.x + _obj.width / 2, _obj.y + _obj.height / 2);
+}
+
+function count_found() {
+	var _found = 0;
+	for (var i = 0; i < array_length(hidden_objects); i++) {
+		if (hidden_objects[i].found) _found++;
+	}
+	return _found;
+}
+
 function close_game() {
-    global.in_hidden_object_game = false;
-	global.block_menus = false;
-    instance_destroy();
+	global.in_hidden_object_game = false;
+	instance_destroy();
 }
 
-//// Function: save_game_state
-//function save_game_state() {
-//    var save_data = {};
-//    save_data.objects = [];
-    
-//    for (var i = 0; i < array_length(hidden_objects); i++) {
-//        var obj_data = {
-//            id: hidden_objects[i].id,
-//            found: hidden_objects[i].found
-//        };
-//        array_push(save_data.objects, obj_data);
-//    }
-    
-//    // Save to file or global variable
-//    var json_string = json_stringify(save_data);
-//    var file = file_text_open_write("hidden_game_" + hidden_game_id + ".json");
-//    file_text_write_string(file, json_string);
-//    file_text_close(file);
-//}
-
-// Function: load_game_state
-function load_game_state() {
-    var filename = "hidden_game_" + hidden_game_id + ".json";
-    
-    if (file_exists(filename)) {
-        var file = file_text_open_read(filename);
-        var json_string = file_text_read_string(file);
-        file_text_close(file);
-        
-        var save_data = json_parse(json_string);
-        
-        // Apply saved states
-        for (var i = 0; i < array_length(save_data.objects); i++) {
-            var saved_obj = save_data.objects[i];
-            
-            // Find matching object in hidden_objects array
-            for (var j = 0; j < array_length(hidden_objects); j++) {
-                if (hidden_objects[j].id == saved_obj.id) {
-                    hidden_objects[j].found = saved_obj.found;
-                    break;
-                }
-            }
-        }
-    }
-}
-
-// Initialize function - call this after hidden_game_id is set
-function initialize_game() {
-    show_debug_message("HIDDEN GAME ID BELOW");
-    show_debug_message(hidden_game_id);
-    
-    switch(hidden_game_id) {
-        case "table_game":
-			background_sprite = spr_table_base;
-            // Add hidden objects with their positions and states
-            show_debug_message("Table Game ID: Pushing objects");
-			if (global.completed_table_game) {
-				// Don't add objects if game already completed
-				break;
-			}
-            array_push(hidden_objects, {
-                sprite: spr_badge,
-                x: background_x + 100,
-                y: background_y + 440,
-                width: sprite_get_width(spr_badge),
-                height: sprite_get_height(spr_badge),
-                found: false,
-                id: "badge",
-				is_item: true
-            });
-            
-            array_push(hidden_objects, {
-                sprite: spr_notepad,
-                x: background_x + 350,
-                y: background_y + 325,
-                width: sprite_get_width(spr_notepad),
-                height: sprite_get_height(spr_notepad),
-                found: false,
-                id: "notepad",
-				is_item: true
-            });
-            break;
-		case "crime_game":
-			background_sprite = spr_crime_base;
-            show_debug_message("Crime Game ID: Pushing objects");
-			if (global.completed_crime_game) {
-				// Don't add objects if game already completed
-				break;
-			}
-            array_push(hidden_objects, {
-                sprite: spr_magnet_shrink,
-                x: background_x + 200,
-                y: background_y + 400,
-                width: sprite_get_width(spr_magnet_shrink),
-                height: sprite_get_height(spr_magnet_shrink),
-                found: false,
-                id: "magnet",
-				is_item: true
-            });
-            
-            array_push(hidden_objects, {
-                sprite: spr_bets_shrink,
-                x: background_x + 360,
-                y: background_y + 350,
-                width: sprite_get_width(spr_bets_shrink),
-                height: sprite_get_height(spr_bets_shrink),
-                found: false,
-                id: "bets",
-				is_item: true
-            });
-            break;
-		case "vini_house_game":
-			background_sprite = spr_vini_table_base;
-            show_debug_message("Vini House Game ID: Pushing objects");
-			if (global.completed_vini_house_game) {
-				// Don't add objects if game already completed
-				break;
-			}
-            array_push(hidden_objects, {
-                sprite: spr_chess_game,
-                x: background_x + 306,
-                y: background_y + 410,
-                width: sprite_get_width(spr_chess_game),
-                height: sprite_get_height(spr_chess_game),
-                found: false,
-                id: "chess",
-				is_item: false
-            });
-            
-            array_push(hidden_objects, {
-                sprite: spr_nota,
-                x: background_x + 280,
-                y: background_y + 180,
-                width: sprite_get_width(spr_nota),
-                height: sprite_get_height(spr_nota),
-                found: false,
-                id: "nota",
-				is_item: true
-            });
-            break;
-		case "safe_game":
-			background_sprite = spr_safe_base;
-            show_debug_message("Safe Game ID: Pushing objects");
-			if (global.completed_safe_game) {
-				// Don't add objects if game already completed
-				break;
-			}
-            array_push(hidden_objects, {
-                sprite: spr_clipe_shrink,
-                x: background_x + 180,
-                y: background_y + 560,
-                width: sprite_get_width(spr_clipe_shrink),
-                height: sprite_get_height(spr_clipe_shrink),
-                found: false,
-                id: "clipe",
-				is_item: true
-            });
-            
-            array_push(hidden_objects, {
-                sprite: spr_bilhete_shrink,
-                x: background_x + 240,
-                y: background_y + 570,
-                width: sprite_get_width(spr_bilhete_shrink),
-                height: sprite_get_height(spr_bilhete_shrink),
-                found: false,
-                id: "bilhete",
-				is_item: true
-            });
-            break;
-    }
-    
-    // Load saved states after objects are created
-    //load_game_state();
-}
-
-// Add this function in your obj_hidden_object_game
-function reset_game_state() {
-    // Reset all objects to not found
-    for (var i = 0; i < array_length(hidden_objects); i++) {
-        hidden_objects[i].found = false;
-    }
-    
-    // Delete the save file
-    var filename = "hidden_game_" + hidden_game_id + ".json";
-    if (file_exists(filename)) {
-        file_delete(filename);
-    }
-    
-    show_debug_message("Game state reset!");
+function check_completion() {
+	if (count_found() < array_length(hidden_objects)) return;
+	
+	close_game();
+	variable_global_set(definition.completed_flag, true);
+	create_textbox(definition.completion_text);
 }

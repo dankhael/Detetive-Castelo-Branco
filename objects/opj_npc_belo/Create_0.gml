@@ -1,7 +1,5 @@
-if(!global.belo_event_1) {
-	text_id = "event 3";
-} else {
-	text_id = "event 5"
-}
-
-interaction_distance = 16;
+event_inherited();
+on_interact = function() {
+	create_textbox(global.belo_event_1 ? "event 5" : "event 3");
+	global.belo_event_1 = true;
+};

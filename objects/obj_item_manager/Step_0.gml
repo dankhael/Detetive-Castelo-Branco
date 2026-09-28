@@ -1,87 +1,50 @@
-// Regular inventory toggle (only when not in selection mode)
-if (keyboard_check_pressed(ord("I")) and !global.dialogo and !global.on_cutscene and !selection_mode and !password_mode) {
-    visible_inventory = !visible_inventory;
-	global.on_inventory = visible_inventory;
+// Abrir/fechar o inventário normal
+if (keyboard_check_pressed(ord("I")) and !selection_mode and !password_mode
+	and !global.dialogo and !global.on_cutscene and !global.in_hidden_object_game) {
+	visible_inventory = !visible_inventory;
 }
 
-// Selection mode controls
-if (selection_mode && visible_inventory && !global.dialogo) {
-	global.on_inventory = visible_inventory;
-    // Toggle item selection with SPACE or ENTER
-    if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter)) {
-        if (item_selected >= 0 && item_selected < array_length(inv)) {
-            var current_item = inv[item_selected];
-            var already_selected = false;
-            var selected_index = -1;
-            
-            // Check if item is already selected
-            for (var i = 0; i < array_length(selected_items); i++) {
-                if (selected_items[i] == current_item) {
-                    already_selected = true;
-                    selected_index = i;
-                    break;
-                }
-            }
-            
-            if (already_selected) {
-                // Remove from selection
-                array_delete(selected_items, selected_index, 1);
-            } else {
-                // Add to selection (if not at max)
-                if (array_length(selected_items) < global.selection_max_items) {
-                    array_push(selected_items, current_item);
-                }
-            }
-        }
-    }
-    
-    // Confirm selection with C key
-    if (keyboard_check_pressed(ord("C"))) {
-        finish_selection();
-    }
-    
-    // Cancel selection with ESC
-    if (keyboard_check_pressed(vk_escape)) {
-        global.selection_active = false;
-        selection_mode = false;
-        visible_inventory = false;
-		global.on_inventory = visible_inventory;
-        selected_items = [];
-    }
+// Navegação na lista (inventário normal e modo seleção)
+if (visible_inventory and !password_mode and !global.dialogo) {
+	var _count = array_length(inv);
+	item_selected += keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up);
+	item_selected = clamp(item_selected, 0, max(0, _count - 1));
 }
 
-// Password mode controls
-if (password_mode && visible_inventory) {
-    password_cursor_blink++;
-    
-    // Number input (0-9)
-    for (var i = 0; i <= 9; i++) {
-        if (keyboard_check_pressed(ord(string(i)))) {
-            if (string_length(password_input) < global.password_max_length) {
-                password_input += string(i);
-            }
-        }
-    }
-    
-    // Backspace to delete
-    if (keyboard_check_pressed(vk_backspace)) {
-        if (string_length(password_input) > 0) {
-            password_input = string_delete(password_input, string_length(password_input), 1);
-        }
-    }
-    
-    // Enter to confirm
-    if (keyboard_check_pressed(vk_enter)) {
-        if (string_length(password_input) > 0) {
-            check_password();
-        }
-    }
-    
-    // Escape to cancel
-    if (keyboard_check_pressed(vk_escape)) {
-        global.password_active = false;
-        password_mode = false;
-        visible_inventory = false;
-        password_input = "";
-    }
+// Modo seleção
+if (selection_mode and !global.dialogo) {
+	if (keyboard_check_pressed(vk_space) or keyboard_check_pressed(vk_enter)) {
+		if (item_selected < array_length(inv)) {
+			toggle_selected_item(inv[item_selected]);
+		}
+	}
+	
+	if (keyboard_check_pressed(ord("C"))) {
+		finish_selection();
+	} else if (keyboard_check_pressed(vk_escape)) {
+		close_inventory();
+	}
 }
+
+// Modo senha
+if (password_mode and !global.dialogo) {
+	password_cursor_blink++;
+	
+	for (var i = 0; i <= 9; i++) {
+		if (keyboard_check_pressed(ord(string(i))) and string_length(password_input) < password.max_length) {
+			password_input += string(i);
+		}
+	}
+	
+	if (keyboard_check_pressed(vk_backspace)) {
+		password_input = string_delete(password_input, string_length(password_input), 1);
+	}
+	
+	if (keyboard_check_pressed(vk_enter) and string_length(password_input) > 0) {
+		check_password();
+	} else if (keyboard_check_pressed(vk_escape)) {
+		close_inventory();
+	}
+}
+
+global.on_inventory = visible_inventory;

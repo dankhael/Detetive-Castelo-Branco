@@ -21,7 +21,7 @@ function scr_game_text(_text_id){
 				scr_text("É bem a sua cara! Por falar em sudoku...", "guarda belo");
 				scr_text("Achei essa revista de quebra-cabeças na copa, acho que é seu.", "guarda belo");
 				scr_text("* Recebe Revista Choquetel.");
-				global.received_magazine = true;
+				add_item("magazine");
 				scr_text("A chefe quer falar com você, parece que chegou um caso novo.", "guarda belo");
 				break;
 			case "event 3 - transito":
@@ -46,6 +46,7 @@ function scr_game_text(_text_id){
 			scr_text("O agente Fraga já está no local, ele vai te dar mais detalhes.", "delegada patricia");
 			scr_text("Acho que você vai gostar do caso...", "patricia sorriso");
 			scr_text("* Parque Casa Fraca Desbloqueado");
+			scr_unlock_location(rm_parque_casa_fraca);
 			break;
 		case "event 7":
 			scr_text("Tá esperando oquê? o agente Fraga está lhe esperando.", "delegada patricia");
@@ -138,6 +139,7 @@ function scr_game_text(_text_id){
 			scr_text("Entramos em contato com a esposa e o irmão da vitima, eles estão em casa no momento", "agente fraga");
 			scr_text("Você devia ir lá e vê se descobre alguma coisa", "agente fraga");
 			scr_text("* Casa de Vinicius desbloqueada");
+			scr_unlock_location(rm_casa_vinicius);
 			break;
 		case "event 21":
 			scr_text("Ele era tão jovem, não acredito que fizeram isso com ele...", "nicole chorando");
@@ -184,8 +186,8 @@ function scr_game_text(_text_id){
 				scr_text("Essa mesmo, o Vinicius amava ir lá pra jogar contra o Tomás, passava tempo até demais lá", "nicole carvalho");
 				scr_text("Apesar de que recentemente do nada ele parou de ir lá, perguntei o motivo mas ele não quis me dizer...", "nicole carvalho");
 				scr_text("Interessante... melhor eu fazer uma visita lá", "castelo branco");
-				global.orpheus_house_unlocked = true;
 				scr_text("* Casa de Orfeu desbloqueada");
+				scr_unlock_location(rm_casa_de_orfeu);
 				scr_text("Ele dizia que eu era a rainha dele...", "nicole triste");
 				break;
 		case "event 23":
@@ -210,6 +212,7 @@ function scr_game_text(_text_id){
 			scr_text("Uma vez ele me disse que se encontrava com um deles na cafeteria Noite Azul", "tomás xavier");
 			scr_text("Estranho... mas acho que vale a pena dar uma olhada", "castelo branco");
 			scr_text("* Cafeteria Noite Azul desbloqueada");
+			scr_unlock_location(rm_cafeteria);
 			break;
 		case "event 26":
 			scr_text("Bom dia senhor, já viu as novas edições da revista choquetel? são as minhas favoritas, e estão em promoção", "julia alves");
@@ -248,7 +251,6 @@ function scr_game_text(_text_id){
 			scr_text("Esse aí, qualquer que fosse o esquema, certeza que ele sabia", "pedro melo");
 			scr_text("Ah é, quase ia esquecendo, na ultima vez que nos encontramos, o Vini me deu esse pendrive com algumas estatisticas e dicas de apostas", "pedro melo");
 			scr_text("Mas quando eu abri, era uma serie de arquivos criptografados, acho que ele trocou os pendrives e me deu o errado", "pedro melo");
-			global.received_pendrive = true;
 			scr_text("* Pendrive recebido");
 			scr_text("Enfim, é isso, boa sorte, espero que encontre quem fez isso com o Vini", "pedro melo");
 			break;
@@ -333,6 +335,7 @@ function scr_game_text(_text_id){
 			scr_text("Toma essa foto","julia alves");
 			scr_text("* Recebe foto secreta");
 			global.received_photo = true;
+			add_item("photo");
 			scr_text("Mas não fala pro senhor Xavier que eu te dei!","julia alves");
 			break;
 		case "event 42":
@@ -341,6 +344,7 @@ function scr_game_text(_text_id){
 			scr_text("Toma essa foto","julia alves");
 			scr_text("* Recebe foto secreta");
 			global.received_photo = true;
+			add_item("photo");
 			scr_text("Mas não fala pro senhor Xavier que eu te dei!","julia alves");
 			break;
 		case "event 43":
@@ -418,6 +422,7 @@ function scr_game_text(_text_id){
 		case "event 52":
 			scr_text("Droga! ele saiu correndo, melhor ir atrás dele", "castelo atrasado");
 			scr_text("* Metro desbloqueado");
+			scr_unlock_location(rm_metro);
 			break;
 		case "event 53":
 			scr_text("Droga! Não tinha nada no armário E1, alguém deve ter chegado antes de mim!", "gabriel borges");
@@ -460,7 +465,8 @@ function scr_game_text(_text_id){
 			scr_text("Vamos achar outro jeito, nós sempre achamos, minha rainha...", "vinicius carvalho");
 			scr_text("Cala a boca! Você tem até amanhã pra vender isso, senão... ", "misterioso");
 			scr_text("* Recebe audio secreto");
-			global.received_audio = True;
+			global.received_audio = true;
+			add_item("audio");
 			scr_text("Entendo, acho que já tenho o suficiente para fechar o caso, vou ligar para delegada Patricia", "castelo branco");
 			scr_text("Alô, Delegada Patricia falando", "delegada patricia");
 			scr_text("Reuna todos os suspeitos na delegacia, e eu cuido do resto", "castelo branco");

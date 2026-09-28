@@ -1,10 +1,20 @@
-if(!global.fraga_event_1) {
-	text_id = "event 8";
-	instance_create_layer(0, 0, "Instances", obj_clown_cutscene);
+event_inherited();
+if (!global.fraga_event_1) {
+	instance_create_depth(0, 0, 0, obj_clown_cutscene);
 } else {
 	x = 730;
 	y = 510;
-	text_id = "event 9";
 }
 
-interaction_distance = 16;
+on_interact = function() {
+	if (!global.fraga_event_1) {
+		// Posiciona o jogador para a cutscene dos palhaços
+		obj_player.x = 480;
+		obj_player.y = 1150;
+		global.fraga_event_1 = true;
+		global.cutscene_1_start = true;
+		create_textbox("event 8");
+	} else {
+		create_textbox(global.completed_crime_game ? "event 20" : "event 9");
+	}
+};

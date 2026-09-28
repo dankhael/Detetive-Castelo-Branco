@@ -1,11 +1,8 @@
-if (!global.cutscene_1_start) {
-	text_id = "event 10";
-} else {
-	text_id = "event 13";
+event_inherited();
+if (global.cutscene_1_start) {
 	x = 670;
 	y = 445;
 }
-
-
-interaction_distance = 16;
-
+on_interact = function() {
+	create_textbox(global.cutscene_1_start ? "event 13" : "event 10");
+};

@@ -1,7 +1,6 @@
-text_id = "event 24";
-
-interaction_distance = 16;
-
+event_inherited();
 if (global.call_event_1) {
 	instance_destroy();
+	exit;
 }
+text_id = "event 24";

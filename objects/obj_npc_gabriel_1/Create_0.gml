@@ -1,11 +1,18 @@
-if(!global.finished_puzzle_1) {
-	text_id = "event 76";
-} else {
-	if (global.gabriel_event_1){
-		instance_destroy();
-	}
-	instance_create_layer(0, 0, "Instances", obj_gabriel_cutscene);
-	text_id = "event 51";
+event_inherited();
+if (global.gabriel_event_1) {
+	instance_destroy();
+	exit;
+}
+if (global.finished_puzzle_1) {
+	instance_create_depth(0, 0, 0, obj_gabriel_cutscene);
 }
 
-interaction_distance = 16;
+on_interact = function() {
+	if (global.finished_puzzle_1) {
+		obj_player.x += 10;
+		global.gabriel_event_1 = true;
+		create_textbox("event 51");
+	} else {
+		create_textbox("event 76");
+	}
+};

@@ -1,11 +1,7 @@
-// Interaction variables
-can_interact = false;
-interaction_distance = 32;
-examine_triggered = false;
+event_inherited();
+hidden_game_id = "safe_game";
 
-// Reference to the hidden object game
-hidden_object_id = "safe_game"; // Unique identifier
-
+// O cofre só aparece depois da invasão da casa (ligação do event 32)
 if (!global.call_event_1) {
 	instance_destroy();
 }

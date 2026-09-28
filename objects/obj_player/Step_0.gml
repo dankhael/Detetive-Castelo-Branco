@@ -2,13 +2,9 @@
 hsp = 0;
 vsp = 0;
 
-if (keyboard_check(vk_shift)) {
-	move_speed = 6;
-} else {
-	move_speed = 2;
-}
+move_speed = keyboard_check(vk_shift) ? 6 : 2;
 
-if (!global.dialogo and !obj_item_manager.visible_inventory and !global.on_cutscene and !global.in_hidden_object_game) {
+if (player_is_free()) {
 	if (keyboard_check(vk_right)) {
 	    hsp = move_speed;
 	    direction_facing = "right";
@@ -27,13 +23,11 @@ if (!global.dialogo and !obj_item_manager.visible_inventory and !global.on_cutsc
 }
 
 // --- COLLISION CHECK ---
-// Horizontal collision
-if (place_meeting(x + hsp, y, obj_wall) or place_meeting(x + hsp, y, obj_npc_wall)) {
+var _solids = [obj_wall, obj_npc_wall];
+if (place_meeting(x + hsp, y, _solids)) {
     hsp = 0;
 }
-
-// Vertical collision
-if (place_meeting(x, y + vsp, obj_wall) or place_meeting(x, y + vsp, obj_npc_wall)) {
+if (place_meeting(x, y + vsp, _solids)) {
     vsp = 0;
 }
 
