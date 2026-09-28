@@ -7,5 +7,3 @@ draw_text(room_width/2, room_height/2 - 20, "Press ENTER to START");
 
 // Draw "Exit"
 draw_text(room_width/2, room_height/2 + 20, "Press ESC to EXIT");
-
-global.in_hidden_object_game = false;

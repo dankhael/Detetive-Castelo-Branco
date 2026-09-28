@@ -1,3 +1,6 @@
+event_inherited();
 text_id = "event 53";
-
-interaction_distance = 16;
+on_interact = function() {
+	create_textbox(text_id);
+	global.cafe_locker = true;
+};

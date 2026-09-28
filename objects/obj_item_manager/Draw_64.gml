@@ -28,7 +28,7 @@ if (password_mode) {
     draw_set_color(c_yellow);
     var title_x = panel_x + padding;
     var title_y = panel_y + padding;
-    draw_text(title_x, title_y, global.password_prompt);
+    draw_text(title_x, title_y, password.prompt);
     
     // Password input box
     var input_x = panel_x + padding;
@@ -44,10 +44,7 @@ if (password_mode) {
     
     // Password text (with asterisks for security)
     draw_set_color(c_white);
-    var display_text = "";
-    for (var i = 0; i < string_length(password_input); i++) {
-        display_text += "*";
-    }
+    var display_text = string_repeat("*", string_length(password_input));
     
     // Add blinking cursor
     if (password_cursor_blink % 60 < 30) {
@@ -61,7 +58,7 @@ if (password_mode) {
     
     // Progress indicator
     draw_set_color(c_gray);
-    var progress_text = string(string_length(password_input)) + "/" + string(global.password_max_length);
+    var progress_text = string(string_length(password_input)) + "/" + string(password.max_length);
     draw_text(input_x + input_w - string_width(progress_text), input_y - 25, progress_text);
     
     // Instructions
@@ -128,45 +125,18 @@ draw_text(details_x + padding, details_y + padding - 8, "Details");
 // Show selection prompt if in selection mode
 if (selection_mode) {
     draw_set_color(c_yellow);
-    draw_text_ext(list_x + padding, list_y + padding + 16, global.selection_prompt + " (" + string(array_length(selected_items)) + "/" + string(global.selection_max_items) + ")", 20, list_w - padding*2);
+    draw_text_ext(list_x + padding, list_y + padding + 16, selection.prompt + " (" + string(array_length(selected_items)) + "/" + string(selection.max_items) + ")", 20, list_w - padding*2);
 }
 
 // === DRAW ITEMS LIST ===
 var items_to_show = array_length(inv);
-
-// Handle selection input (only if not in selection mode for navigation)
-if (!selection_mode) {
-    if (keyboard_check_pressed(vk_up) && item_selected > 0) {
-        item_selected--;
-    }
-    if (keyboard_check_pressed(vk_down) && item_selected < items_to_show - 1) {
-        item_selected++;
-    }
-} else {
-    // Selection mode navigation
-    if (keyboard_check_pressed(vk_up) && item_selected > 0) {
-        item_selected--;
-    }
-    if (keyboard_check_pressed(vk_down) && item_selected < items_to_show - 1) {
-        item_selected++;
-    }
-}
 
 // Draw items
 for (var i = 0; i < items_to_show; i++) {
     var item = inv[i];
     var yy = list_y + (selection_mode ? 80 : 60) + (i * item_height);
     
-    // Check if item is selected in selection mode
-    var is_selected_for_use = false;
-    if (selection_mode) {
-        for (var j = 0; j < array_length(selected_items); j++) {
-            if (selected_items[j] == item) {
-                is_selected_for_use = true;
-                break;
-            }
-        }
-    }
+    var is_selected_for_use = selection_mode && array_contains(selected_items, item);
     
     // Selected item highlight (navigation)
     if (i == item_selected) {

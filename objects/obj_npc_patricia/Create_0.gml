@@ -1,7 +1,5 @@
-if(!global.patricia_event_1) {
-	text_id = "event 6";
-} else {
-	text_id = "event 7";
-}
-
-interaction_distance = 16;
+event_inherited();
+on_interact = function() {
+	create_textbox(global.patricia_event_1 ? "event 7" : "event 6");
+	global.patricia_event_1 = true;
+};
